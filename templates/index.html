@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>thyroid disease detection</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: rgb(0, 0, 0);
+        }
+    </style>
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/ATHARVA-TIRKHUNDE/Thyroid-Disease-Detection-Assets/main/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="myheader">
+      <div class="py-0">
+        <nav
+          class="relative px-8 py-4 flex justify-between items-center border-y border-gray-200 dark:border-gray-700">
+          <a
+            class="text-3xl font-bold leading-none flex items-center space-x-4"
+            href="#">
+            <span class="text-gray-100 dark:text-gray-100 text-xl">TDP.</span>
+          </a>
+          <div class="lg:hidden">
+            <button
+              class="navbar-burger flex items-center text-gray-600 dark:text-gray-300 p-3">
+              <svg
+                class="block h-4 w-4 fill-current"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg">
+                <title>Mobile menu</title>
+                <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+              </svg>
+            </button>
+          </div>
+          <ul class="hidden lg:flex lg:items-center lg:justify-end grow mr-4">
+            <li>
+              <a
+                class="text-gray-100 dark:text-gray-100 hover:text-gray-100 dark:hover:text-gray-100 px-4 py-2"
+                href="#">
+                Home
+              </a>
+            </li>
+            <li>
+              <a
+                class="text-gray-100 dark:text-gray-100 hover:text-gray-100 dark:hover:text-gray-100 px-4 py-2"
+                href="#">
+                About
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>      
+    </div>
+    <div class="centre">
+        <section>
+            <div class="grid grid-cols-1 lg:grid-cols-2">
+              <div
+                class="relative flex items-end px-4 pb-10 pt-60 sm:pb-16 md:justify-center lg:pb-24 sm:px-6 lg:px-8">
+                <div class="absolute inset-0">
+                  <img
+                    class="object-cover object-top w-full h-full"
+                    src="https://raw.githubusercontent.com/ATHARVA-TIRKHUNDE/Thyroid-Disease-Detection-Assets/main/poster.jpg"
+                    alt="" />
+                </div>
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+                <div class="relative">
+                  <div class="w-full max-w-xl xl:w-full xl:mx-auto xl:pr-24 xl:max-w-xl">
+                    <h3 class="text-4xl font-bold text-white">
+                      Now Get your Thyroid result within a second.....
+                    </h3>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="flex items-center justify-center px-4 py-10 sm:px-6 lg:px-8 sm:py-16 lg:py-24">
+                <div class="xl:w-full xl:max-w-sm 2xl:max-w-md xl:mx-auto">
+                  <h2
+                    class="text-4xl font-bold leading-tight text-black dark:text-white sm:text-4xl">
+                    Thyroid Disease Prediction
+                  </h2>
+                  <form method="POST", action="{{url_for('index')}}" class="mt-8">
+                    <div class="space-y-5">
+                      <div>
+                        <label
+                          for="FTI Value"
+                          class="text-base font-medium text-gray-900 dark:text-gray-200">
+                          <p><i>Your thyroid creates and produces hormones play a role in many different systems throughout your body. When your thyroid makes either too much or too little of these important hormones, it's called a thyroid disease.There are several different types of disease, including hyperthyroidism, hypothyroidism, thyroiditis Hashimoto's thyroiditis.</i><br></p>
+                        </label>
+                      </div>
+                      <div>
+                        
+                      </div>
+                      <div>
+                        <a href="/moreinfo">
+                          <button class="w-full inline-flex items-center justify-center rounded-md bg-pink-600 px-3.5 py-2.5 text-base font-semibold leading-7 text-white hover:bg-pink-500" type="button"  >Know More</button></a>
+                          <br><br>
+                      </div>
+                      <div>
+                        <a href="/predict">
+                        <button class="w-full inline-flex items-center justify-center rounded-md bg-indigo-600 px-3.5 py-2.5 text-base font-semibold leading-7 text-white hover:bg-indigo-500" type="button" >Start Prediction </button></a>
+                      </div>
+                      <div>
+                        
+                      </div>
+                    </div>
+                  </form>
+                  </div>
+                  {{predict}}
+                </div>
+              </div>
+            </div>
+            
+          </section>
+          
+    </div>
+</body>
+</html>

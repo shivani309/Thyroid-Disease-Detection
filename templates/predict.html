@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Predict</title>
+    <style>
+        body {
+            background: rgb(63,94,251);
+background: radial-gradient(circle, rgba(1,4,14,1) 84%, rgba(1,4,14,1) 92%, rgba(1,4,14,1) 100%);
+        }
+        .spaceing {
+            margin: 1em 1em;
+        }
+    </style>
+    <link rel="shortcut icon" href="templates/assets/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div class="spaceing p-8 max-w-md mx-auto dark:bg-gray-900">
+        <div class="flex items-center justify-center">
+            <div class="flex items-center justify-center px-4 py-10 sm:px-6 lg:px-8 sm:py-16 lg:py-24">
+                <div class="xl:w-full xl:max-w- 2xl:max-w-md xl:mx-auto">
+                    <h2 class="text-3xl font-bold leading-tight text-black dark:text-white sm:text-4xl">
+                        Prediction form
+                    </h2>
+                    <p class="mt-2 text-base text-gray-600 dark:text-gray-300">
+                        Please fll the correct details in the mention sections
+                        <a href="#" title=""
+                            class="font-medium text-indigo-600 transition-all duration-200 hover:text-indigo-700 hover:underline focus:text-indigo-700">
+                            know more about thyroid
+                        </a>
+                    </p>
+                    <form action="/predictresult" method="POST" class="mt-8">
+                        <div>
+                            <label class="text-base font-medium text-gray-900 dark:text-gray-200">
+                                Age
+                            </label>
+                            <div class="mt-2.5">
+                                <input
+                                    class="flex h-10 w-full rounded-md border border-gray-300 bg-transparent py-2 px-3 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
+                                    placeholder="Enter Your Correct age" id="FTI Value" name='age' type="number" min="1" max="100" required="required" />
+                            </div>
+                        </div>
+                        <div>
+                            <label class="text-base font-medium text-gray-900 dark:text-gray-200">
+                                Gender(Sex)
+                            </label>
+                            <div class="mt-2.5">
+                                <select class="flex h-10 w-full rounded-md border border-gray-300 bg-transparent py-2 px-3 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900" placeholder="Enter Your Gender :" id="FTI Value" name="sex" required="required" >
+                                    <option style="color: black;"> <strong>Male</strong></option>
+                                    <option style="color: black;"><strong>Female</strong></option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="space-y-5">
+
+                            <div>
+                                <label class="text-base font-medium text-gray-900 dark:text-gray-200">
+                                    TSH Value
+                                </label>
+                                <div class="mt-2.5">
+                                    <input
+                                        class="flex h-10 w-full rounded-md border border-gray-300 bg-transparent py-2 px-3 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
+                                        placeholder="Enter correct TSH Value (mlU/L)" id="TSH Value" type="number" name="TSH" min="0.4" max="24.0"  required="required" step="any" />
+                                </div>
+                            </div>
+                            <div>
+                                <label class="text-base font-medium text-gray-900 dark:text-gray-200">
+                                    TT4 Value
+                                </label>
+                                <div class="mt-2.5">
+                                    <input
+                                        class="flex h-10 w-full rounded-md border border-gray-300 bg-transparent py-2 px-3 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
+                                        placeholder="Enter Correct TT4 Value" id="TT4 Value" type="number" name="TT4" min="20" max="150"  required="required" step="any" />
+                                </div>
+                            </div>
+                            <div>
+                                <label class="text-base font-medium text-gray-900 dark:text-gray-200">
+                                    FTI Value
+                                </label>
+                                <div class="mt-2.5">
+                                    <input
+                                        class="flex h-10 w-full rounded-md border border-gray-300 bg-transparent py-2 px-3 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
+                                        placeholder="Enter FTI Value" id="FTI Value" type="number" name="FTI" min="20" max="160" required="required" step="any" />
+                                </div>
+                            </div>
+                            <!-- <div>
+                                <label class="text-base font-medium text-gray-900 dark:text-gray-200">
+                                    T4U Value
+                                </label>
+                                <div class="mt-2.5">
+                                    <input
+                                        class="flex h-10 w-full rounded-md border border-gray-300 bg-transparent py-2 px-3 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
+                                        type="text" placeholder="Enter Correct T4U Value" id="T4U Value" name='d' />
+                                </div>
+                            </div> -->
+                            <div>
+                                <label class="text-base font-medium text-gray-900 dark:text-gray-200">
+                                    On Thyroxine Medication
+                                </label>
+                                <div class="mt-2.5">
+                                    <select class="flex h-10 w-full rounded-md border border-gray-300 bg-transparent py-2 px-3 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900" placeholder="Enter Your Gender :" id="FTI Value" name="on_thyroxine" required="required">
+                                        <option style="color: black;"> <strong>Yes</strong></option>
+                                        <option style="color: black;"><strong>No</strong></option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="text-base font-medium text-gray-900 dark:text-gray-200">
+                                    On Antithyroid Medication
+                                </label>
+                                <div class="mt-2.5">
+                                    <select class="flex h-10 w-full rounded-md border border-gray-300 bg-transparent py-2 px-3 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900" placeholder="Enter Your Gender :" id="FTI Value" name="on_antithyroid_medication" required="required">
+                                        <option style="color: black;"> <strong>Yes</strong></option>
+                                        <option style="color: black;"><strong>No</strong></option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="text-base font-medium text-gray-900 dark:text-gray-200">
+                                    Do you have Goitre ?
+                                </label>
+                                <div class="mt-2.5">
+                                    <select class="flex h-10 w-full rounded-md border border-gray-300 bg-transparent py-2 px-3 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900" placeholder="Enter Your Gender :" id="FTI Value" name="goitre" required="required" >
+                                        <option style="color: black;"> <strong>Yes</strong></option>
+                                        <option style="color: black;"><strong>No</strong></option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="text-base font-medium text-gray-900 dark:text-gray-200">
+                                    Hypopituitary ?
+                                </label>
+                                <div class="mt-2.5">
+                                    <select class="flex h-10 w-full rounded-md border border-gray-300 bg-transparent py-2 px-3 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900" placeholder="Enter Your Gender :" id="FTI Value" name="hypopituitary" required="required" >
+                                        <option style="color: black;"> <strong>True</strong></option>
+                                        <option style="color: black;"><strong>False</strong></option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="text-base font-medium text-gray-900 dark:text-gray-200">
+                                    Any Psychological Symptoms
+                                </label>
+                                <div class="mt-2.5">
+                                    <select class="flex h-10 w-full rounded-md border border-gray-300 bg-transparent py-2 px-3 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900" placeholder="Enter Your Gender " id="FTI Value" name="psych" required="required" >
+                                        <option style="color: black;"> <strong>True</strong></option>
+                                        <option style="color: black;"><strong>False</strong></option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="text-base font-medium text-gray-900 dark:text-gray-200">
+                                    T3 Measured ?
+                                </label>
+                                <div class="mt-2.5">
+                                    <select name="T3_measured" required="required" class="flex h-10 w-full rounded-md border border-gray-300 bg-transparent py-2 px-3 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900" placeholder="Enter Your Gender :" id="FTI Value" >
+                                        <option style="color: black;"> <strong>True</strong></option>
+                                        <option style="color: black;"><strong>False</strong></option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div>
+                                <input type="submit" value="Start Prediction"
+                                    class="w-full inline-flex items-center justify-center rounded-md bg-indigo-600 px-3.5 py-2.5 text-base font-semibold leading-7 text-white hover:bg-indigo-500" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
